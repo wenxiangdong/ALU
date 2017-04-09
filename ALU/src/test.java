@@ -85,7 +85,17 @@ public class test {
 		System.out.println(a.integerTrueValue("00111100")+"*"+a.integerTrueValue("10111100")+"\n"+a.integerMultiplication("00111100","10111100",8));
 		System.out.println(a.integerTrueValue("1111000000010000"));
 		System.out.println("45*(-12)="+45*(-12)+"\n"+a.integerMultiplication(a.integerRepresentation("45",16),a.integerRepresentation("-12",16),16)+"\n"+a.integerTrueValue("11111111111111111111110111100100"));
-//		float f=(float)7/2+1;s
+		System.out.println(a.integerMultiplication("1000","1000",4));
+		System.out.println(a.integerMultiplication("1001","1000",4));
+
+
+
+
+
+
+
+
+		//		float f=(float)7/2+1;s
 //		System.out.println(f);
 //		
 }

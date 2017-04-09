@@ -526,7 +526,16 @@ public class ALU {
 			lastBits = result.substring(result.length()-1)+additionalBit;
 
 		}
-		return result.toString();
+		if(operand1.charAt(0)!=operand2.charAt(0)){
+			if(result.charAt(0)=='0'){
+				return "1"+result;
+			}
+		}else{
+			if(result.charAt(0)=='1'){
+				return "1"+result;
+			}
+		}
+		return  "0"+result;
 	}
 	
 	/**
@@ -539,6 +548,10 @@ public class ALU {
 	 */
 	public String integerDivision (String operand1, String operand2, int length) {
 		// TODO YOUR CODE HERE.
+
+
+
+
 		return null;
 	}
 	
