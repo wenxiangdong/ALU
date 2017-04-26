@@ -89,6 +89,18 @@ public class test {
 		System.out.println(a.integerMultiplication("1001","1000",4));
 
 
+		System.out.println("integerDivision----------------");
+		System.out.println(a.integerDivision("1001","0011",4));
+		System.out.println(a.integerDivision("0111","0011",4));
+		System.out.println(a.integerDivision("0100","0010",4));
+		System.out.println(a.integerDivision("01000011","00001000",8));
+		System.out.println(a.integerTrueValue("01000011")+"/"+a.integerTrueValue("00001000"));
+
+		System.out.println("signedAddition------------------");
+		System.out.println(a.signedAddition("1100","1011",8));
+		System.out.println(a.signedAddition("0100","1011",8));
+		System.out.println(a.signedAddition("0100","1011",4));
+
 
 
 

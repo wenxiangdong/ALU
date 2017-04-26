@@ -364,8 +364,6 @@ public class ALU {
 
 		for (int i=bits_1.length-1;i>=0;i--){
 			String temp=fullAdder(bits_1[i],bits_2[i],c);
-			//System.out.println("temp:"+temp);
-			//c1=c;
 			c=temp.charAt(0);
 			result.append(temp.substring(1,2));
 		}
@@ -549,10 +547,98 @@ public class ALU {
 	public String integerDivision (String operand1, String operand2, int length) {
 		// TODO YOUR CODE HERE.
 
+		//被除数初始化
+		//符号 右移的拓展
+		StringBuilder operand1Builder=new StringBuilder();
+		for (int i =0; i<length;i++){
+			operand1Builder.append(operand1.charAt(0));
+		}
+		operand1Builder.append(operand1);
+		operand1=operand1Builder.toString();
+		//System.out.println("原始R:"+operand1);
+
+		//除数的初始处理
+		//除数的补
+		String operand2Opposite = leftShift(integerRepresentation(
+				integerTrueValue(oneAdder(negation(operand2)).substring(1)),2*length),
+		length);
+		//除数
+		String operand2OldValue=operand2;
+		operand2=leftShift(integerRepresentation(
+				integerTrueValue(operand2),2*length),
+				length);
+		//System.out.println("除数："+operand2);
 
 
+		//第一步，求X+Y
+		char OF='0';
+		char Q;
+		String temp;
+		if(operand1.charAt(0)==operand2.charAt(0)){
+			temp=integerAddition(operand1, operand2Opposite,2*length).substring(1);
+		}else{
+			temp = integerAddition(operand1,operand2,2*length).substring(1);
+		}
+		//Qn的计算
+		if(temp.charAt(0)==operand2.charAt(0)){//同1
+			Q='1';
+		}else{
+			Q='0';
+		}
+		//System.out.println("Q:"+Q);
+		//判断溢出与否
+		//X与Y同号且Qn为1
+		//X与Y异号且Qn为0
+		OF=(operand1.charAt(0)==operand2.charAt(0)&&Q=='1')
+				||(operand1.charAt(0)!=operand2.charAt(0)&&Q=='0')?'1':'0';
+		//System.out.println("OF:"+OF);
 
-		return null;
+		for(int i = 0;i<length;i++){
+			//左移一位
+			temp=leftShift(temp,1);
+			if(Q=='1'){
+				temp=oneAdder(temp).substring(1);
+				//2R-Y
+				temp=integerAddition(temp,operand2Opposite,2*length).substring(1);
+			}else{
+				//2R+Y
+				temp=integerAddition(temp,operand2,2*length).substring(1);
+			}
+
+			//判断上商
+			if(temp.charAt(0)==operand2.charAt(0)){
+				Q='1';
+			}else{
+				Q='0';
+			}
+		}
+
+		//最后一次左移
+		String reminder=temp.substring(0,length);
+		String result=temp.substring(length);
+		result=leftShift(result,1);
+		//最后一次上商
+		if(Q=='1'){
+			result=oneAdder(result).substring(1);
+		}
+
+		//余数修正
+		//余数与被除数不同号
+		if(reminder.charAt(0)!=operand1.charAt(0)){
+			//商的修正
+			//若x与y不同号，加1
+			//余数则减除数
+			if(operand2.charAt(0)!=operand1.charAt(0)){
+				result=oneAdder(result).substring(1);
+				reminder=integerSubtraction(reminder,operand2OldValue,length).substring(1);
+			}else{
+				//余数加除数
+				reminder=integerAddition(reminder,operand2OldValue,length).substring(1);
+			}
+		}
+
+		//返回
+		return OF+result+reminder;
 	}
 	
 	/**
@@ -567,7 +653,31 @@ public class ALU {
 	 */
 	public String signedAddition (String operand1, String operand2, int length) {
 		// TODO YOUR CODE HERE.
-		return null;
+		//扩展
+		String extendOperand1=integerRepresentation(integerTrueValue("0"+operand1.substring(1)),length);
+		String extendOperand2=integerRepresentation(integerTrueValue("0"+operand2.substring(1)),length);
+		String operandOpposite="0"+oneAdder(negation(operand2.substring(1))).substring(1);
+
+		String result;
+		if(operand1.charAt(0)==operand2.charAt(0)){
+			//同号求和
+			result = adder(extendOperand1, extendOperand2,'0',length);
+			System.out.println("result:"+result);
+			return result.charAt(0)+operand1.substring(0,1)+result.substring(1);
+		}else{
+			//异号求差
+			result = adder("0"+operand1.substring(1),operandOpposite,'0',operand1.length()).substring(1);
+			System.out.println("result:"+result);
+			//最高数值位没有进位，说明结果为负，需要求补
+			if(result.charAt(0)=='0'){
+				result=oneAdder(negation(result)).substring(1);
+				return "0"+negation(operand1).substring(0,1)+
+						integerRepresentation(integerTrueValue(result.substring(1)),length);
+			}else{
+				return "0"+operand1.substring(0,1)+
+						integerRepresentation(integerTrueValue(result.substring(1)),length);
+			}
+		}
 	}
 	
 	/**
