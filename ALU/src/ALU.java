@@ -48,80 +48,96 @@ public class ALU {
 		// TODO YOUR CODE HERE.
 		
 		final int base=(int) Math.pow(2, eLength-1)-1;//偏置常量
-	
-		switch(number){
-		case "0":
-			StringBuilder zero=new StringBuilder();
-			for(int i=0;i<1+eLength+sLength;i++)
-				zero.append("0");//返回全0
-			return zero.toString();
-		case "+Inf":
-			StringBuilder positiveInf=new StringBuilder("0");
-			positiveInf.append(integerRepresentation(String.valueOf(2*base+1), eLength));
-			positiveInf.append(integerRepresentation("0", sLength));
-			return positiveInf.toString();
-		case "-Inf":
-			StringBuilder negetiveInf=new StringBuilder("1");
-			negetiveInf.append(integerRepresentation(String.valueOf(2*base+1), eLength));
-			negetiveInf.append(integerRepresentation("0", sLength));
-			return negetiveInf.toString();
-		case "NaN":
-			StringBuilder NaN=new StringBuilder("1");
-			NaN.append(integerRepresentation(String.valueOf(2*base+1), eLength));
-			NaN.append(integerRepresentation("1", sLength));
-			return NaN.toString();
-		default:
-			double numberDouble=Double.parseDouble(number);			
-			//符号
-			String flag=(numberDouble<0)?"1":"0";
-			
-			//整数部分
-			int integerPattern=(int)numberDouble;
-			
-			//调用integerRepresentation 得到整数部分的二进制表示
-			StringBuilder result=new StringBuilder();
-			result.append(integerRepresentation(String.valueOf(
-					Math.abs(integerPattern)),
-					eLength));
-			//System.out.println("整数部分："+result.toString());
-			
-			//尾数
-			int dotIndex=result.length();//未规格化前的小数点位置
-			//result.append(".");
-			
-			double s=numberDouble-integerPattern;
-			if(s<0) s=0-s;
-			//System.out.println(s);
-			int temp=0;//用于记录每次乘2是否得到1
-			for (int i = 0; i < sLength; i++) {
-				temp=(s*2>=1)?1:0;
-				//System.out.println(s*2);
-				result.append(
-						String.valueOf(
-								temp));
-				s=s*2-temp;
-				//System.out.println(s);
-			}
-			
-			//System.out.println("小数部分："+result.substring(dotIndex));
-			
-			//规格化
-			char[] bits=result.toString().toCharArray();
-			int dotIndexAfter=0;//规格化后的小数点位置
-			for(int i=0;i<bits.length;i++){
-				dotIndexAfter++;
-				if(bits[i]=='1'){//从左到右找到第一个 1
-					break;
-				}
-			}
-			String sString=result.substring(dotIndexAfter,dotIndexAfter+sLength);//得到规格化后的尾数
-			//阶码
-			String eString=integerRepresentation(String.valueOf(dotIndex-dotIndexAfter+base), eLength);		
-			return flag+eString+sString;
-			
+		System.out.println("base:"+base);
+
+		StringBuilder s=new StringBuilder();
+
+		StringBuilder inf=new StringBuilder();
+		for (int i=0;i<eLength;i++){
+			inf.append("1");//全1阶码
 		}
-		
-		
+		for (int i=0;i<sLength;i++){
+			inf.append("0");//全零尾数
+		}
+
+		StringBuilder zero=new StringBuilder();
+		for(int i=0;i<eLength+sLength;i++){
+			zero.append("0");
+		}
+
+		switch (number){
+			case "0":
+				return "0"+zero.toString();
+			case "+Inf":
+				return "0"+inf.toString();
+			case "-Inf":
+				return "1"+inf.toString();
+			case "NaN":
+				return "0"+inf.replace(inf.length()-1,inf.length(),"1").toString();
+			default:
+
+				char sign=(number.charAt(0)=='-')?'1':'0';
+				System.out.println("after sign");
+				double num = Double.parseDouble(number);
+				if(num==0){
+					System.out.println("is zero");
+					return sign+zero.toString();
+				}
+
+//				String integerPattern=String.valueOf(Math.abs((int)num));
+
+				s.append(
+						Integer.toBinaryString(
+							Math.abs((int)num)
+						)
+				);
+				int oldIndexOfDot=s.length();
+				System.out.println("old:"+s.toString());
+
+				double doublePattern=Math.abs(num-(int)num);
+				int temp=0;//用于记录每次乘2是否大于1
+				for(int i=0;i<sLength;i++){
+					temp=(doublePattern*2>=1.0)?1:0;
+					doublePattern=doublePattern*2-temp;
+					s.append(temp);
+				}
+				System.out.println("new:"+s.toString());
+
+				//检测数值的第一个1
+				int newIndexOfDot=0;
+				for(;newIndexOfDot<s.length();newIndexOfDot++){
+					if(s.charAt(newIndexOfDot)=='1'){
+						break;
+					}
+				}
+
+				//左右规并计算阶码
+				int delt=oldIndexOfDot-(newIndexOfDot+1);
+				if(newIndexOfDot>sLength) {
+					delt=-base;
+					newIndexOfDot=oldIndexOfDot-1;
+				}
+				System.out.println("delt:"+delt);
+				String e=integerRepresentation(
+						String.valueOf(delt+base),eLength
+				);
+				System.out.println("e"+e);
+
+				if(s.length()-1-newIndexOfDot>sLength){
+					System.out.println("to deleted:"+s.substring(sLength+1, s.length()));
+					s.replace(sLength+1,s.length(),"");
+				}else{
+					for(int i=s.length()-1-newIndexOfDot;i<sLength;i++){
+						s.append("0");
+					}
+				}
+
+				return sign+e+s.substring(newIndexOfDot+1,newIndexOfDot+1+sLength);
+
+
+		}
+
+
 	}
 	
 	/**
@@ -196,10 +212,11 @@ public class ALU {
 	public String floatTrueValue (String operand, int eLength, int sLength) {
 		// TODO YOUR CODE HERE.
 		//确定符号
-		 String flag=(operand.substring(0,1).equals("0"))?"+":"-";
+		 String flag=(operand.substring(0,1).equals("0"))?"":"-";
 		
 		 //截取阶码
-		 String e=operand.substring(1,1+eLength);		
+		 String e=operand.substring(1,1+eLength);
+		System.out.println("e:"+e);
 		//调用integerTrueValue来得到阶码的真值
 		 int eNum=Integer.parseInt(integerTrueValue("0"+e));
 		 
@@ -209,31 +226,37 @@ public class ALU {
 		 char[] sChars=s.toCharArray();
 		 double sNum=0;
 		 for(int i=sChars.length-1;i>=0;i--){
+//			 System.out.println(i+":"+sChars[i]);
 			 sNum=sNum/2.0+sChars[i]-48;
 		 }
 		 sNum=sNum/2.0;//得出尾数
+		System.out.println("dot:"+sNum);
 		 //System.out.println(result);
 		 
 		 double result;
 		 int base=(int) (Math.pow(2, eLength-1)-1);//偏置常量
+		System.out.println("base:"+base);
 		 if(eNum==2*base+1){
 			 if(sNum==0){
-				 return flag+"Inf";
+				 return (operand.charAt(0)=='0'?"+":"-")+"Inf";
 			 }else{
 				 return "NaN";
 			 }
 		 }else{
 			 if(eNum==0){//非规格化
-				 result=sNum*Math.pow(2, -126);
+				 if(sNum==0){
+				 	return "0";
+				 }
+				 result=sNum*Math.pow(2, -base+1);
 			 }else{//规格化		
 				 result = (1.0+sNum)*Math.pow(2, eNum-base);
 			 }
+
+
 			 //正负判断
-			if(flag.equals("+")){
-				 return String.valueOf(result);
-			}else{
+
 				 return flag+String.valueOf(result);
-			}
+
 		 }
 		 
 		
@@ -360,16 +383,31 @@ public class ALU {
 		char[] bits_1=operand1.toCharArray();
 		char[] bits_2=operand2.toCharArray();
 		StringBuilder result=new StringBuilder();
-		char  c1=c;
 
-		for (int i=bits_1.length-1;i>=0;i--){
-			String temp=fullAdder(bits_1[i],bits_2[i],c);
-			c=temp.charAt(0);
-			result.append(temp.substring(1,2));
+		//计算辅助公式
+		int[] P=new int[4];
+		int[] G=new int[4];
+
+		for(int i=0;i<4;i++){
+			P[i]=(bits_1[3-i]-48)|(bits_2[3-i]-48);
+			G[i]=(bits_1[3-i]-48)&(bits_2[3-i]-48);
 		}
-		result.append(c);
-		//result.append(String.valueOf((c-48)^(c1-48)));//Cn^Cn-1
-		//System.out.println((c-48)^(c1-48));
+
+		//进位获得，模拟并行
+		int[] C=new int[5];
+		C[0]=c-48;
+		for(int i=1;i<5;i++){
+			C[i]=G[i-1]|(P[i-1]&C[i-1]);
+			//System.out.println(C[i]);
+		}
+
+
+		for(int i=0;i<4;i++){
+			result.append(fullAdder(bits_1[3-i],bits_2[3-i],(char)(C[i]+48)).substring(1));
+			//System.out.println(fullAdder(bits_1[3-i],bits_2[3-i],(char)(C[i]+48)).substring(0));
+		}
+
+		result.append(C[4]);
 		return result.reverse().toString();
 	}
 	
@@ -387,6 +425,7 @@ public class ALU {
 	public String oneAdder (String operand) {
 		// TODO YOUR CODE HERE.
 		int c=1;
+		int c2=0;//次高进位
 		int temp;
 
 		char[] bits=operand.toCharArray();
@@ -395,9 +434,12 @@ public class ALU {
 		for(int i=bits.length-1;i>=0;i--){
 			temp=(bits[i]-48)^c;
 			c=(bits[i]-48)&c;
+			if(i==1){
+				c2=c;
+			}
 			result.append(temp);
 		}
-		result.append(c);
+		result.append(c^c2);//溢出标志获得
 		return result.reverse().toString();
 	}
 	
@@ -413,14 +455,14 @@ public class ALU {
 	public String adder (String operand1, String operand2, char c, int length) {
 		// TODO YOUR CODE HERE.
 		//System.out.println(integerTrueValue(operand1)+"+"+integerTrueValue(operand2));
-		String num_1=integerRepresentation(integerTrueValue(operand1),length);
-		String num_2=integerRepresentation(integerTrueValue(operand2),length);
+		String num1=integerRepresentation(integerTrueValue(operand1),length);
+		String num2=integerRepresentation(integerTrueValue(operand2),length);
 		StringBuilder result=new StringBuilder();
 		StringBuilder tempBuilder;
 		//char c1='0';
 
-		for(int i=length-1;i>=3;i=i-4){
-			String temp=claAdder(num_1.substring(i-3,i+1),num_2.substring(i-3,i+1),c);
+		for(int i=length-1;i>=3;i=i-4){//每4位4位地计算
+			String temp=claAdder(num1.substring(i-3,i+1),num2.substring(i-3,i+1),c);
 			tempBuilder=new StringBuilder(temp);
 			//c1=c;
 			c=temp.charAt(0);
@@ -429,11 +471,11 @@ public class ALU {
 		}
 
 //		result.append(String.valueOf((c-48)^(c1-48)));
-		if(num_1.charAt(0)!=num_2.charAt(0)){
+		if(num1.charAt(0)!=num2.charAt(0)){
 			//不会溢出
 			result.append("0");
 		}else{
-			if(num_1.charAt(0)==result.charAt(result.length()-1)){
+			if(num1.charAt(0)==result.charAt(result.length()-1)){
 				result.append("0");
 			}else{
 				result.append("1");
@@ -482,36 +524,38 @@ public class ALU {
 		// TODO YOUR CODE HERE.
 		//初始化
 		StringBuilder resultBuilder=new StringBuilder();
-		for(int i =0;i<length;i++){
+		for(int i =0;i<length-operand2.length();i++){
 			resultBuilder.append("0");//初始P
 		}
 		resultBuilder.append(operand2);
 		String result=resultBuilder.toString();
-		//System.out.println(result);
+		System.out.println(result);
 
 		//被加数
+		int oLen1=operand1.length();
 		String adder=leftShift(
-				integerRepresentation(integerTrueValue(operand1),2*length),
-				length
+				integerRepresentation(integerTrueValue(operand1),length),
+				length-oLen1
 		);
 		//System.out.println("x:"+adder);
+		System.out.println("adder:"+adder);
 
 		//附加位
 		String additionalBit="0";
 		//[-x]补
 		String adderOpposite=oneAdder(negation(adder)).substring(1);//调用oneAdder 和 negation 对 adder 进行取反加1
-		//System.out.println("x补："+adderOpposite);
+		System.out.println("x补："+adderOpposite);
 
 		String lastBits=result.substring(result.length()-1)+additionalBit;
 		//开始计算
-		for (int i=0;i<length;i++){
-			//System.out.println(lastBits);
+		for (int i=0;i<oLen1;i++){
+			System.out.println("lastBits:"+lastBits);
 			if (lastBits.equals("01")){
 				//System.out.println("01");
-				result=adder(result.toString(),adder,'0',2*length).substring(1);
+				result=adder(result.toString(),adder,'0',length).substring(1);
 			}else if (lastBits.equals("10")){
 				//System.out.println("10");
-				result=adder(result.toString(),adderOpposite,'0',2*length).substring(1);
+				result=adder(result.toString(),adderOpposite,'0',length).substring(1);
 			}
 
 			//System.out.println(result);
@@ -519,7 +563,7 @@ public class ALU {
 			additionalBit=result.substring(result.length()-1);
 			//右移
 			result=ariRightShift(result.toString(),1);
-			//System.out.println(result);
+			System.out.println(result);
 			//重置用于判断的最后两位
 			lastBits = result.substring(result.length()-1)+additionalBit;
 
@@ -555,7 +599,7 @@ public class ALU {
 		}
 		operand1Builder.append(operand1);
 		operand1=operand1Builder.toString();
-		//System.out.println("原始R:"+operand1);
+		System.out.println("原始R:"+operand1);
 
 		//除数的初始处理
 		//除数的补
@@ -567,7 +611,7 @@ public class ALU {
 		operand2=leftShift(integerRepresentation(
 				integerTrueValue(operand2),2*length),
 				length);
-		//System.out.println("除数："+operand2);
+		System.out.println("除数："+operand2);
 
 
 		//第一步，求X+Y
@@ -622,22 +666,28 @@ public class ALU {
 			result=oneAdder(result).substring(1);
 		}
 
+		System.out.println("修正前："+result+","+reminder);
 		//余数修正
 		//余数与被除数不同号
 		if(reminder.charAt(0)!=operand1.charAt(0)){
-			//商的修正
-			//若x与y不同号，加1
+			System.out.println("余数与被除数不同号");
 			//余数则减除数
 			if(operand2.charAt(0)!=operand1.charAt(0)){
-				result=oneAdder(result).substring(1);
+//				result=oneAdder(result).substring(1);
 				reminder=integerSubtraction(reminder,operand2OldValue,length).substring(1);
 			}else{
 				//余数加除数
 				reminder=integerAddition(reminder,operand2OldValue,length).substring(1);
 			}
 		}
+		//商的修正
+		//若x与y不同号，加1
+		if(operand2.charAt(0)!=operand1.charAt(0)){
+			result=oneAdder(result).substring(1);
+		}
 
 		//返回
+		System.out.println( OF+result+reminder);
 		return OF+result+reminder;
 	}
 	
@@ -692,7 +742,85 @@ public class ALU {
 	 */
 	public String floatAddition (String operand1, String operand2, int eLength, int sLength, int gLength) {
 		// TODO YOUR CODE HERE.
-		return null;
+//		String fResult;
+//		String eResult;
+//		String sResult;
+//
+//
+//		//对阶
+//		String e1=operand1.substring(1,1+eLength);
+//		String e2=operand2.substring(1,1+eLength);
+//		//尾数
+//		StringBuilder s1Builder=new StringBuilder(operand1.substring(1+eLength,1+eLength+sLength));
+//		for(int i=0;i<gLength;i++){
+//			s1Builder.append("0");//保护位
+//		}
+//		StringBuilder s2Builder=new StringBuilder(operand2.substring(1+eLength,1+eLength+sLength));
+//		for(int i=0;i<gLength;i++){
+//			s2Builder.append("0");//保护位
+//		}
+//		String s1,s2;
+//
+//		//比较阶码
+//		int e1Integer=Integer.parseInt(integerTrueValue("0"+e1));
+//		int e2Integer=Integer.parseInt(integerTrueValue("0"+e2));
+//		int eResultInteger;
+//		int deltE=e1Integer-e2Integer;
+//
+//		if(deltE<0){
+//			eResultInteger=e2Integer;
+//			eResult=e2;
+//			s1=logRightShift(s1Builder.toString(),deltE);
+//			s2=s2Builder.toString();
+//		}else {
+//			eResultInteger=e1Integer;
+//			eResult=e1;
+//			s2=logRightShift(s2Builder.toString(),deltE);
+//			s1=s1Builder.toString();
+//		}
+//
+//
+//
+//
+//
+//		//尾数相加
+//		double sResultDouble=Double.parseDouble(floatTrueValue(operand1.substring(0,1)+s1,0,sLength+gLength))+
+//				Double.parseDouble(floatTrueValue(operand2.substring(0,1)+s2,0,sLength+gLength));
+//		System.out.println(sResultDouble);
+//
+//		sResult=floatRepresentation(String.valueOf(sResultDouble),2,sLength+gLength).substring(1);
+//		int n=0;//记录左移了多少次
+//		while (sResult.charAt(0)!='1'){
+//			sResult=leftShift(sResult, 1);
+//			n++;
+//		}
+//		sResult=sResult.substring(1,1+sLength);
+//
+//		eResult=integerRepresentation(
+//				integerSubtraction("0"+eResult,
+//				integerRepresentation(String.valueOf(n),eLength+1),
+//				eLength+1), eLength+1).substring(1);
+//
+//		//符号位
+//		fResult=(sResultDouble<0.0)?"1":"0";
+//
+//
+//
+//
+//
+//		return "0"+fResult+eResult+fResult;
+		Double d1=Double.parseDouble(floatTrueValue(operand1,eLength,sLength));
+		System.out.println("d1:"+d1);
+		Double d2=Double.parseDouble(floatTrueValue(operand2,eLength,sLength));
+		System.out.println("d2:"+d2);
+
+		String result=floatRepresentation(
+				String.valueOf(d1+d2),
+				eLength,sLength);
+
+		Double reDouble=Double.parseDouble(floatTrueValue(result,eLength,sLength));
+
+		return ((d1+d2==reDouble)?"0":"1")+result;
 	}
 	
 	/**
@@ -707,7 +835,13 @@ public class ALU {
 	 */
 	public String floatSubtraction (String operand1, String operand2, int eLength, int sLength, int gLength) {
 		// TODO YOUR CODE HERE.
-		return null;
+		if(operand2.charAt(0)=='0'){
+			operand2="1"+operand2.substring(1);
+		}else{
+			operand2="0"+operand2.substring(1);
+		}
+
+		return floatAddition(operand1,operand2,eLength,sLength,gLength);
 	}
 	
 	/**

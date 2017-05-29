@@ -38,6 +38,7 @@ public class test {
 		System.out.println(a.floatTrueValue(a.floatRepresentation("123.75", 8, 23), 8, 23));
 		
 		System.out.println("floatRepresentation----------------");
+		System.out.println(a.floatRepresentation("0.25", 8, 11));
 		System.out.println(a.floatRepresentation("11.375", 8, 11));		
 		System.out.println("01000001001101100000");
 		System.out.println(a.floatRepresentation("-11.375", 8, 11));
@@ -60,7 +61,7 @@ public class test {
 
 
 		System.out.println("claAdder----------------");
-		System.out.println(a.claAdder("1001", "0001", '1'));
+		System.out.println(a.claAdder("0001", "0001", '1'));
 		System.out.println(a.claAdder("1101", "1001", '0'));
 		System.out.println(a.claAdder("1101", "1100", '0'));
 
@@ -102,6 +103,9 @@ public class test {
 		System.out.println(a.signedAddition("0100","1011",4));
 
 
+		System.out.println("floatAddition----------------------");
+		System.out.println(a.floatAddition("001110000","001111000",4,4,1));
+		System.out.println(a.floatAddition("011101111","010001111",4,4,1));
 
 
 
