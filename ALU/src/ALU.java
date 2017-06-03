@@ -1,8 +1,3 @@
-import javax.crypto.CipherInputStream;
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
-
-import org.w3c.dom.DOMConfiguration;
-
 /**
  * 模拟ALU进行整数和浮点数的四则运算
  * @author 李培林 161250060
@@ -165,7 +160,8 @@ public class ALU {
 	 * @return operand的真值。若为负数；则第一位为“-”；若为正数或 0，则无符号位
 	 */
 	public String integerTrueValue (String operand) {
-		// TODO YOUR CODE HERE.		
+		// TODO YOUR CODE HERE.
+		System.out.println("TrueValue传入参数为："+operand);
 		//负数 
 		if(operand.substring(0, 1).equals("1")){
 			//取反
@@ -195,6 +191,7 @@ public class ALU {
 				result=result*2+Integer.parseInt(operand.substring(i,i+1));
 			}
 
+			System.out.println("trueValue:"+result);
 			return String.valueOf(result);
 		}
 		
@@ -529,7 +526,7 @@ public class ALU {
 		}
 		resultBuilder.append(operand2);
 		String result=resultBuilder.toString();
-		System.out.println(result);
+//		System.out.println(result);
 
 		//被加数
 		int oLen1=operand1.length();
@@ -552,10 +549,10 @@ public class ALU {
 			System.out.println("lastBits:"+lastBits);
 			if (lastBits.equals("01")){
 				//System.out.println("01");
-				result=adder(result.toString(),adder,'0',length).substring(1);
+				result=add(result.toString(),adder).substring(1);
 			}else if (lastBits.equals("10")){
 				//System.out.println("10");
-				result=adder(result.toString(),adderOpposite,'0',length).substring(1);
+				result=add(result.toString(),adderOpposite).substring(1);
 			}
 
 			//System.out.println(result);
@@ -576,6 +573,10 @@ public class ALU {
 			if(result.charAt(0)=='1'){
 				return "1"+result;
 			}
+		}
+
+		if(Integer.parseInt(integerTrueValue(result))>Math.pow(2,length)-1){
+			return "1"+result;
 		}
 		return  "0"+result;
 	}
@@ -690,7 +691,20 @@ public class ALU {
 		System.out.println( OF+result+reminder);
 		return OF+result+reminder;
 	}
-	
+
+	String add(String operand1,String operand2){
+		 StringBuilder result=new StringBuilder();
+		 int c=0;
+		 for(int i=operand1.length()-1;i>=0;i--){
+		 	int temp=(operand1.charAt(i)-48)+(operand2.charAt(i)-48)+c;
+		 	c=temp/2;
+		 	result.append(temp%2);
+
+		 }
+		 result.append(c);
+		 return result.reverse().toString();
+	}
+
 	/**
 	 * 带符号整数加法，可以调用{@link #adder(String, String, char, int) adder}等方法，
 	 * 但不能直接将操作数转换为补码后使用{@link #integerAddition(String, String, int) integerAddition}、
@@ -704,28 +718,35 @@ public class ALU {
 	public String signedAddition (String operand1, String operand2, int length) {
 		// TODO YOUR CODE HERE.
 		//扩展
+		System.out.println(operand1+","+operand2);
 		String extendOperand1=integerRepresentation(integerTrueValue("0"+operand1.substring(1)),length);
 		String extendOperand2=integerRepresentation(integerTrueValue("0"+operand2.substring(1)),length);
-		String operandOpposite="0"+oneAdder(negation(operand2.substring(1))).substring(1);
+		String operandOpposite=oneAdder(negation(extendOperand2)).substring(1);
+		System.out.println(extendOperand1);
+		System.out.println(extendOperand2);
+		System.out.println("operandOpp:"+operandOpposite);
 
 		String result;
 		if(operand1.charAt(0)==operand2.charAt(0)){
 			//同号求和
-			result = adder(extendOperand1, extendOperand2,'0',length);
+			result = add(extendOperand1, extendOperand2);
 			System.out.println("result:"+result);
 			return result.charAt(0)+operand1.substring(0,1)+result.substring(1);
 		}else{
 			//异号求差
-			result = adder("0"+operand1.substring(1),operandOpposite,'0',operand1.length()).substring(1);
+
+			result = add(extendOperand1,operandOpposite);
+			char fResult=result.charAt(0);
+			result = result.substring(1);
 			System.out.println("result:"+result);
 			//最高数值位没有进位，说明结果为负，需要求补
-			if(result.charAt(0)=='0'){
+			if(fResult=='0'){
 				result=oneAdder(negation(result)).substring(1);
 				return "0"+negation(operand1).substring(0,1)+
-						integerRepresentation(integerTrueValue(result.substring(1)),length);
+						integerRepresentation(integerTrueValue(result),length);
 			}else{
 				return "0"+operand1.substring(0,1)+
-						integerRepresentation(integerTrueValue(result.substring(1)),length);
+						integerRepresentation(integerTrueValue(result),length);
 			}
 		}
 	}
@@ -742,87 +763,96 @@ public class ALU {
 	 */
 	public String floatAddition (String operand1, String operand2, int eLength, int sLength, int gLength) {
 		// TODO YOUR CODE HERE.
-//		String fResult;
-//		String eResult;
-//		String sResult;
-//
-//
-//		//对阶
-//		String e1=operand1.substring(1,1+eLength);
-//		String e2=operand2.substring(1,1+eLength);
-//		//尾数
-//		StringBuilder s1Builder=new StringBuilder(operand1.substring(1+eLength,1+eLength+sLength));
-//		for(int i=0;i<gLength;i++){
-//			s1Builder.append("0");//保护位
-//		}
-//		StringBuilder s2Builder=new StringBuilder(operand2.substring(1+eLength,1+eLength+sLength));
-//		for(int i=0;i<gLength;i++){
-//			s2Builder.append("0");//保护位
-//		}
-//		String s1,s2;
-//
-//		//比较阶码
-//		int e1Integer=Integer.parseInt(integerTrueValue("0"+e1));
-//		int e2Integer=Integer.parseInt(integerTrueValue("0"+e2));
-//		int eResultInteger;
-//		int deltE=e1Integer-e2Integer;
-//
-//		if(deltE<0){
-//			eResultInteger=e2Integer;
-//			eResult=e2;
-//			s1=logRightShift(s1Builder.toString(),deltE);
-//			s2=s2Builder.toString();
-//		}else {
-//			eResultInteger=e1Integer;
-//			eResult=e1;
-//			s2=logRightShift(s2Builder.toString(),deltE);
-//			s1=s1Builder.toString();
-//		}
-//
-//
-//
-//
-//
-//		//尾数相加
-//		double sResultDouble=Double.parseDouble(floatTrueValue(operand1.substring(0,1)+s1,0,sLength+gLength))+
-//				Double.parseDouble(floatTrueValue(operand2.substring(0,1)+s2,0,sLength+gLength));
-//		System.out.println(sResultDouble);
-//
-//		sResult=floatRepresentation(String.valueOf(sResultDouble),2,sLength+gLength).substring(1);
-//		int n=0;//记录左移了多少次
-//		while (sResult.charAt(0)!='1'){
-//			sResult=leftShift(sResult, 1);
-//			n++;
-//		}
-//		sResult=sResult.substring(1,1+sLength);
-//
-//		eResult=integerRepresentation(
-//				integerSubtraction("0"+eResult,
-//				integerRepresentation(String.valueOf(n),eLength+1),
-//				eLength+1), eLength+1).substring(1);
-//
-//		//符号位
-//		fResult=(sResultDouble<0.0)?"1":"0";
-//
-//
-//
-//
-//
-//		return "0"+fResult+eResult+fResult;
-		Double d1=Double.parseDouble(floatTrueValue(operand1,eLength,sLength));
-		System.out.println("d1:"+d1);
-		Double d2=Double.parseDouble(floatTrueValue(operand2,eLength,sLength));
-		System.out.println("d2:"+d2);
 
-		String result=floatRepresentation(
-				String.valueOf(d1+d2),
-				eLength,sLength);
+		//符号位
+		String f1=operand1.substring(0,1);
+		String f2=operand2.substring(0,1);
+		//指数获取
+		String e1=operand1.substring(1,1+eLength);
+		int e1Int=Integer.parseInt(integerTrueValue("0"+e1));
+		System.out.println("e1:"+e1Int);
+		String e2=operand2.substring(1,1+eLength);
+		int e2Int=Integer.parseInt(integerTrueValue("0"+e2));
+		System.out.println("e2:"+e2Int);
 
-		Double reDouble=Double.parseDouble(floatTrueValue(result,eLength,sLength));
+		String eResult;
+		int eResultInt;
+		//尾数获取，包括隐藏位1
+		String s1="1"+operand1.substring(1+eLength);
+		String s2="1"+operand2.substring(1+eLength);
+		System.out.println("加上隐藏位s1:"+s1);
+		System.out.println("加上隐藏位s2:"+s2);
 
-		return ((d1+d2==reDouble)?"0":"1")+result;
+		//对阶
+		int deltE=e1Int-e2Int;
+		System.out.println("deltE:"+deltE);
+		if(deltE>0){
+			eResultInt=e1Int;
+			s2=logRightShift(s2,deltE);
+		}else if(deltE<0){
+			eResultInt=e2Int;
+			s1=logRightShift(s1,-deltE);
+		}else{
+			eResultInt=e1Int;
+		}
+		System.out.println("向大看齐的eResultInt:"+eResultInt);
+
+		//尾数相加
+
+		int lenResult=sLength+2;
+		System.out.println("加上符号位s1:"+f1+s1);
+		System.out.println("加上符号位s2:"+f2+s2);
+
+
+		String sResult=signedAddition(f1+s1,f2+s2, lenResult);
+		char fResult=sResult.charAt(1);//结果的符号位
+		sResult = sResult.substring(2);//没符号位
+
+		if(deltE==0&&Integer.parseInt(integerTrueValue(sResult))==0){
+			return "0"+"0"+integerRepresentation("0",eLength+sLength);
+		}
+
+		//左右规
+		while (sResult.length()>1 && sResult.charAt(0)=='0'){
+			sResult = sResult.substring(1);
+		}
+		deltE=sResult.length()-sLength-1;
+		System.out.println("deltE:"+deltE);
+		System.out.println("sResult:"+sResult);//还是有隐藏位的
+		sResult=sResult.substring(1);
+		if(sResult.length()<=sLength){
+			System.out.println("尾数太短");
+			for(int i=sResult.length();i<sLength;i++){
+				sResult = sResult+"0";
+				System.out.println(sResult.length());
+			}
+		}else{
+			System.out.println("尾数太长");
+			sResult=sResult.substring(0,sLength);
+		}
+		System.out.println("sResult:"+sResult);
+
+
+
+		eResultInt+=deltE;
+		String of="0";//溢出标志
+		if(eResultInt>Math.pow(2,eLength-1)-1){
+			of="1";
+		}
+		System.out.println("左右规之后的eResultInt:"+eResultInt);
+
+
+
+		eResult=integerRepresentation(String.valueOf(eResultInt),eLength);
+//		System.out.println("左右规之后的deltE:"+deltE);
+//		System.out.println("eResult:"+eResult);
+
+
+		return of+fResult+eResult+sResult;
+
+
 	}
-	
+
 	/**
 	 * 浮点数减法，可调用{@link #floatAddition(String, String, int, int, int) floatAddition}方法实现。<br/>
 	 * 例：floatSubtraction("00111111010100000", "00111111001000000", 8, 8, 8)
@@ -834,14 +864,15 @@ public class ALU {
 	 * @return 长度为2+eLength+sLength的字符串表示的相减结果，其中第1位指示是否指数上溢（溢出为1，否则为0），其余位从左到右依次为符号、指数（移码表示）、尾数（首位隐藏）。舍入策略为向0舍入
 	 */
 	public String floatSubtraction (String operand1, String operand2, int eLength, int sLength, int gLength) {
-		// TODO YOUR CODE HERE.
+//		 TODO YOUR CODE HERE.
 		if(operand2.charAt(0)=='0'){
 			operand2="1"+operand2.substring(1);
 		}else{
 			operand2="0"+operand2.substring(1);
 		}
-
+		System.out.println("operand2:"+operand2);
 		return floatAddition(operand1,operand2,eLength,sLength,gLength);
+//		return floatAddition(operand1,"1"+operand2.substring(1),eLength,sLength,gLength);
 	}
 	
 	/**
@@ -855,7 +886,32 @@ public class ALU {
 	 */
 	public String floatMultiplication (String operand1, String operand2, int eLength, int sLength) {
 		// TODO YOUR CODE HERE.
-		return null;
+		int base=(int)Math.pow(2,eLength-1)-1;
+		int e1Int=Integer.parseInt(integerTrueValue("0"+operand1.substring(1,1+eLength)));
+		int e2Int=Integer.parseInt(integerTrueValue("0"+operand2.substring(1,1+eLength)));
+		char f1=operand1.charAt(0);
+		char f2=operand2.charAt(0);
+		String s1="1"+operand1.substring(1+eLength);
+		String s2="1"+operand2.substring(1+eLength);
+
+		int eResultInt=e1Int+e2Int-base;
+
+		String sResult=integerMultiplication("0"+s1, "0"+s2,2*sLength+4).substring(3);
+		System.out.println(sResult);
+		if(!sResult.substring(0,2).equals("01")){
+			eResultInt+=1;
+		}
+		sResult=sResult.substring(2,2+sLength);//去掉隐藏位
+		int of=0;
+		if(eResultInt>base){
+			of=1;
+		}
+		String eResult=integerRepresentation(String.valueOf(e1Int+e2Int-base),eLength);
+
+		int fResult=(f1-48)^(f2-48);
+
+
+		return String.valueOf(of)+String.valueOf(fResult)+eResult+sResult;
 	}
 	
 	/**
@@ -869,7 +925,35 @@ public class ALU {
 	 */
 	public String floatDivision (String operand1, String operand2, int eLength, int sLength) {
 		// TODO YOUR CODE HERE.
-		return null;
+		int base=(int)Math.pow(2,eLength-1)-1;
+		int e1Int=Integer.parseInt(integerTrueValue("0"+operand1.substring(1,1+eLength)));
+		int e2Int=Integer.parseInt(integerTrueValue("0"+operand2.substring(1,1+eLength)));
+		char f1=operand1.charAt(0);
+		char f2=operand2.charAt(0);
+		String s1="1"+operand1.substring(1+eLength);
+		String s2="1"+operand2.substring(1+eLength);
+
+		int eResultInt=e1Int-e2Int-base;
+
+		String sResult=integerDivision("0"+s1, "0"+s2,sLength+1).substring(1,1+sLength);
+		System.out.println("sResult:"+sResult);
+		if(sResult.charAt(0)=='0'){
+			eResultInt-=1;
+			sResult=sResult.substring(2)+"00";
+		}else{
+			sResult=sResult.substring(1)+"0";
+		}//去掉隐藏位
+
+		int of=0;
+		if(eResultInt>base){
+			of=1;
+		}
+		String eResult=integerRepresentation(String.valueOf(e1Int+e2Int-base),eLength);
+
+		int fResult=(f1-48)^(f2-48);
+
+
+		return String.valueOf(of)+String.valueOf(fResult)+eResult+sResult;
 	}
 
 
