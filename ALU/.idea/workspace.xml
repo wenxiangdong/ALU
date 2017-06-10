@@ -25,34 +25,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test.java">
+      <file leaf-file-name="ALU.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ALU.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="117" column="1" lean-forward="false" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
+            <state relative-caret-position="357">
+              <caret line="165" column="0" lean-forward="true" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
               <folding>
-                <element signature="method#main#0;class#test#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ALUTest2.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ALUTest2.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="322" column="0" lean-forward="false" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
-              <folding>
-                <element signature="method#integerRepresentationTest#0;class#ALUTest2#0" expanded="true" />
-                <element signature="method#floatRepresentationTest#0;class#ALUTest2#0" expanded="true" />
-                <element signature="method#adderTest#0;class#ALUTest2#0" expanded="true" />
-                <element signature="method#integerAdditionTest#0;class#ALUTest2#0" expanded="true" />
-                <element signature="method#integerMultiplicationTest#0;class#ALUTest2#0" expanded="true" />
-                <element signature="method#integerDivisionTest#0;class#ALUTest2#0" expanded="true" />
-                <element signature="method#signedAdditionTest#0;class#ALUTest2#0" expanded="true" />
-                <element signature="method#floatAdditionTest#0;class#ALUTest2#0" expanded="true" />
-                <element signature="method#floatSubtractionTest#0;class#ALUTest2#0" expanded="true" />
-                <element signature="method#floatMultiplicationTest#0;class#ALUTest2#0" expanded="true" />
+                <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
+                <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+                <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+                <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
+                <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
+                <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
+                <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
+                <element signature="method#add#0;class#ALU#0" expanded="true" />
+                <element signature="method#signedAddition#0;class#ALU#0" expanded="true" />
+                <element signature="method#floatAddition#0;class#ALU#0" expanded="true" />
+                <element signature="method#floatSubtraction#0;class#ALU#0" expanded="true" />
+                <element signature="method#floatMultiplication#0;class#ALU#0" expanded="true" />
+                <element signature="method#floatDivision#0;class#ALU#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -61,8 +52,8 @@
       <file leaf-file-name="ALU.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../../Tencent Files/930469801/FileRecv/ALU.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="807">
-              <caret line="1022" column="5" lean-forward="false" selection-start-line="1022" selection-start-column="5" selection-end-line="1022" selection-end-column="5" />
+            <state relative-caret-position="-1024">
+              <caret line="197" column="31" lean-forward="false" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
               <folding>
                 <element signature="e#114#115#0" expanded="false" />
                 <element signature="e#171#172#0" expanded="false" />
@@ -83,7 +74,6 @@
                 <element signature="method#change2#0;class#ALU#0" expanded="false" />
                 <element signature="method#ecalc#0;class#ALU#0" expanded="false" />
                 <element signature="method#integerRepresentation#0;class#ALU#0" expanded="false" />
-                <element signature="method#floatRepresentation#0;class#ALU#0" expanded="false" />
                 <element signature="method#ieee754#0;class#ALU#0" expanded="false" />
                 <element signature="method#integerTrueValue#0;class#ALU#0" expanded="false" />
                 <element signature="method#iszero#0;class#ALU#0" expanded="false" />
@@ -99,11 +89,11 @@
                 <element signature="method#integerAddition#0;class#ALU#0" expanded="false" />
                 <element signature="method#integerSubtraction#0;class#ALU#0" expanded="false" />
                 <element signature="method#integerMultiplication#0;class#ALU#0" expanded="false" />
-                <element signature="docComment;method#integerDivision#0;class#ALU#0" expanded="false" />
                 <element signature="method#integerDivision#0;class#ALU#0" expanded="false" />
                 <element signature="e#18237#18238#0" expanded="false" />
                 <element signature="e#18275#18276#0" expanded="false" />
                 <element signature="method#comp#0;class#ALU#0" expanded="false" />
+                <element signature="method#signedAddition#0;class#ALU#0" expanded="false" />
                 <element signature="method#floatAddition#0;class#ALU#0" expanded="false" />
                 <element signature="method#floatSubtraction#0;class#ALU#0" expanded="false" />
                 <element signature="method#floatMultiplication#0;class#ALU#0" expanded="false" />
@@ -113,53 +103,98 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Try.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Try.java">
+      <file leaf-file-name="Ieee754Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Ieee754Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+            <state relative-caret-position="564">
+              <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="method#init#0;class#App#0" expanded="false" />
-                <element signature="method#succeeded#0;class#854:1714" expanded="false" />
-                <element signature="method#cancelled#0;class#854:1714" expanded="false" />
-                <element signature="method#failed#0;class#854:1714" expanded="false" />
-                <element signature="method#call#0;class#854:1714" expanded="false" />
-                <element signature="method#start#0;class#App#0" expanded="false" />
-                <element signature="e#2380#2381#0" expanded="false" />
-                <element signature="e#2408#2409#0" expanded="false" />
+                <element signature="method#data#0;class#Ieee754Test#0" expanded="true" />
+                <element signature="e#1107#1108#0" expanded="true" />
+                <element signature="e#1164#1165#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ALU.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ALU.java">
+      <file leaf-file-name="FloatRepresentationTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FloatRepresentationTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1880">
-              <caret line="312" column="56" lean-forward="false" selection-start-line="312" selection-start-column="56" selection-end-line="312" selection-end-column="56" />
+            <state relative-caret-position="189">
+              <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
               <folding>
-                <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
-                <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
-                <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
-                <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
-                <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
-                <element signature="method#add#0;class#ALU#0" expanded="true" />
-                <element signature="method#signedAddition#0;class#ALU#0" expanded="true" />
-                <element signature="method#floatAddition#0;class#ALU#0" expanded="true" />
-                <element signature="method#floatSubtraction#0;class#ALU#0" expanded="true" />
-                <element signature="method#floatMultiplication#0;class#ALU#0" expanded="true" />
-                <element signature="method#floatDivision#0;class#ALU#0" expanded="true" />
+                <element signature="method#data#0;class#FloatRepresentationTest#0" expanded="true" />
+                <element signature="e#1347#1348#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="117" column="1" lean-forward="false" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
+              <folding>
+                <element signature="method#main#0;class#test#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Try.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Try.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="215">
+              <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatSubtractionTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FloatSubtractionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="639">
+              <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+              <folding>
+                <element signature="method#data#0;class#FloatSubtractionTest#0" expanded="true" />
+                <element signature="e#1504#1505#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatTrueValueTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FloatTrueValueTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-42">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="method#data#0;class#FloatTrueValueTest#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatAdditionTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FloatAdditionTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FloatMultiplicationTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/FloatMultiplicationTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+              <folding>
+                <element signature="method#data#0;class#FloatMultiplicationTest#0" expanded="true" />
+                <element signature="e#1483#1484#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -182,14 +217,37 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/App.java" />
-        <option value="$PROJECT_DIR$/src/Try.java" />
         <option value="$PROJECT_DIR$/src/test/ALUTest.java" />
         <option value="$PROJECT_DIR$/src/ALUTest.java" />
         <option value="$PROJECT_DIR$/src/test.java" />
         <option value="$PROJECT_DIR$/../../Tencent Files/930469801/FileRecv/ALU.java" />
-        <option value="$PROJECT_DIR$/src/ALU.java" />
         <option value="$PROJECT_DIR$/src/ALUTest2.java" />
+        <option value="$PROJECT_DIR$/src/testset/AdderTest.java" />
+        <option value="$PROJECT_DIR$/src/AdderTest.java" />
+        <option value="$PROJECT_DIR$/src/AriRightShiftTest.java" />
+        <option value="$PROJECT_DIR$/src/ClaAdderTest.java" />
+        <option value="$PROJECT_DIR$/src/FloatAdditionTest.java" />
+        <option value="$PROJECT_DIR$/src/App.java" />
+        <option value="$PROJECT_DIR$/src/FloatDivisionTest.java" />
+        <option value="$PROJECT_DIR$/src/FloatMultiplicationTest.java" />
+        <option value="$PROJECT_DIR$/src/FloatRepresentationTest.java" />
+        <option value="$PROJECT_DIR$/src/FloatSubtractionTest.java" />
+        <option value="$PROJECT_DIR$/src/FloatTrueValueTest.java" />
+        <option value="$PROJECT_DIR$/src/FullAdderTest.java" />
+        <option value="$PROJECT_DIR$/src/Ieee754Test.java" />
+        <option value="$PROJECT_DIR$/src/IntegerAdditionTest.java" />
+        <option value="$PROJECT_DIR$/src/IntegerDivisionTest.java" />
+        <option value="$PROJECT_DIR$/src/IntegerMultiplicationTest.java" />
+        <option value="$PROJECT_DIR$/src/IntegerRepresentationTest.java" />
+        <option value="$PROJECT_DIR$/src/IntegerSubtractionTest.java" />
+        <option value="$PROJECT_DIR$/src/IntegerTrueValueTest.java" />
+        <option value="$PROJECT_DIR$/src/LeftShiftTest.java" />
+        <option value="$PROJECT_DIR$/src/LogRightShiftTest.java" />
+        <option value="$PROJECT_DIR$/src/NegationTest.java" />
+        <option value="$PROJECT_DIR$/src/OneAdderTest.java" />
+        <option value="$PROJECT_DIR$/src/SignedAdditionTest.java" />
+        <option value="$PROJECT_DIR$/src/Try.java" />
+        <option value="$PROJECT_DIR$/src/ALU.java" />
       </list>
     </option>
   </component>
@@ -220,7 +278,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -249,6 +306,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -258,7 +316,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -281,59 +339,98 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ALUTest2">
-    <configuration default="false" name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="test" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ALU" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ALU" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="Try" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Try" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="ALU" />
-      <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="ALUTest2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.FloatMultiplicationTest">
+    <configuration default="false" name="FloatRepresentationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="ALU" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ALUTest2" />
+      <option name="MAIN_CLASS_NAME" value="FloatRepresentationTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="Ieee754Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="ALU" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Ieee754Test" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="IntegerAdditionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="ALU" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="IntegerAdditionTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="FloatSubtractionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="ALU" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FloatSubtractionTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
+    <configuration default="false" name="FloatMultiplicationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="ALU" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="FloatMultiplicationTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -735,18 +832,20 @@
     <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Application.test" />
-      <item index="1" class="java.lang.String" itemvalue="Application.App" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Try" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ALUTest2" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.FloatRepresentationTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.Ieee754Test" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.IntegerAdditionTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.FloatSubtractionTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.FloatMultiplicationTest" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ALUTest2" />
-        <item index="1" class="java.lang.String" itemvalue="Application.test" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Try" />
-        <item index="3" class="java.lang.String" itemvalue="Application.App" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.FloatMultiplicationTest" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.FloatSubtractionTest" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.IntegerAdditionTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.Ieee754Test" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.FloatRepresentationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -792,43 +891,46 @@
       <workItem from="1496297977126" duration="21180000" />
       <workItem from="1496391187751" duration="1632000" />
       <workItem from="1496499826959" duration="4441000" />
+      <workItem from="1496920694397" duration="4152000" />
+      <workItem from="1497016550838" duration="599000" />
+      <workItem from="1497056801840" duration="10591000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 32m 27s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="FloatMultiplicationTest - 2017.06.10 at 16h 07m 55s.xml">
+      <configuration name="FloatMultiplicationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 35m 08s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="FloatRepresentationTest - 2017.06.10 at 16h 01m 58s.xml">
+      <configuration name="FloatRepresentationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 36m 14s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="FloatRepresentationTest - 2017.06.10 at 16h 03m 01s.xml">
+      <configuration name="FloatRepresentationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 36m 51s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="FloatRepresentationTest - 2017.06.10 at 16h 03m 39s.xml">
+      <configuration name="FloatRepresentationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 39m 37s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="FloatRepresentationTest - 2017.06.10 at 16h 04m 18s.xml">
+      <configuration name="FloatRepresentationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 39m 51s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="FloatRepresentationTest - 2017.06.10 at 16h 05m 14s.xml">
+      <configuration name="FloatRepresentationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 42m 58s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="FloatRepresentationTest - 2017.06.10 at 16h 06m 03s.xml">
+      <configuration name="FloatRepresentationTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 46m 14s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="FloatSubtractionTest - 2017.06.10 at 16h 07m 51s.xml">
+      <configuration name="FloatSubtractionTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 46m 58s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="Ieee754Test - 2017.06.10 at 16h 07m 38s.xml">
+      <configuration name="Ieee754Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ALUTest2 - 2017.06.03 at 23h 47m 38s.xml">
-      <configuration name="ALUTest2" configurationId="JUnit" />
+    <history-entry file="IntegerAdditionTest - 2017.06.10 at 16h 07m 43s.xml">
+      <configuration name="IntegerAdditionTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100273000" />
+    <option name="totallyTimeSpent" value="115615000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -845,20 +947,21 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32760596" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41122565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41122565" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14054054" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14594595" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -870,7 +973,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -886,7 +988,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -895,282 +997,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2626">
-          <caret line="101" column="59" lean-forward="false" selection-start-line="101" selection-start-column="59" selection-end-line="101" selection-end-column="59" />
-          <folding>
-            <element signature="method#main#0;class#test#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Try.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ALU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16978">
-          <caret line="653" column="63" lean-forward="true" selection-start-line="653" selection-start-column="63" selection-end-line="653" selection-end-column="63" />
-          <folding>
-            <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
-            <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
-            <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
-            <element signature="method#add#0;class#ALU#0" expanded="true" />
-            <element signature="method#signedAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatDivision#0;class#ALU#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="42" />
-          <folding>
-            <element signature="method#main#0;class#test#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Try.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ALU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14274">
-          <caret line="549" column="0" lean-forward="false" selection-start-line="549" selection-start-column="0" selection-end-line="549" selection-end-column="0" />
-          <folding>
-            <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
-            <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
-            <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
-            <element signature="method#add#0;class#ALU#0" expanded="true" />
-            <element signature="method#signedAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatDivision#0;class#ALU#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="42" />
-          <folding>
-            <element signature="method#main#0;class#test#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Try.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ALU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4628">
-          <caret line="549" column="0" lean-forward="false" selection-start-line="549" selection-start-column="0" selection-end-line="549" selection-end-column="0" />
-          <folding>
-            <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
-            <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
-            <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
-            <element signature="method#add#0;class#ALU#0" expanded="true" />
-            <element signature="method#signedAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatDivision#0;class#ALU#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="42" />
-          <folding>
-            <element signature="method#main#0;class#test#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Try.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ALU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14326">
-          <caret line="551" column="0" lean-forward="false" selection-start-line="551" selection-start-column="0" selection-end-line="551" selection-end-column="0" />
-          <folding>
-            <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
-            <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
-            <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
-            <element signature="method#add#0;class#ALU#0" expanded="true" />
-            <element signature="method#signedAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatDivision#0;class#ALU#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="42" />
-          <folding>
-            <element signature="method#main#0;class#test#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Try.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ALU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14326">
-          <caret line="551" column="0" lean-forward="false" selection-start-line="551" selection-start-column="0" selection-end-line="551" selection-end-column="0" />
-          <folding>
-            <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
-            <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
-            <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
-            <element signature="method#add#0;class#ALU#0" expanded="true" />
-            <element signature="method#signedAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatDivision#0;class#ALU#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="4" lean-forward="false" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="42" />
-          <folding>
-            <element signature="method#main#0;class#test#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Try.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ALU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14326">
-          <caret line="551" column="0" lean-forward="false" selection-start-line="551" selection-start-column="0" selection-end-line="551" selection-end-column="0" />
-          <folding>
-            <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
-            <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
-            <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
-            <element signature="method#add#0;class#ALU#0" expanded="true" />
-            <element signature="method#signedAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatDivision#0;class#ALU#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="42" />
-          <folding>
-            <element signature="method#main#0;class#test#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ALU.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4628">
-          <caret line="551" column="0" lean-forward="false" selection-start-line="551" selection-start-column="0" selection-end-line="551" selection-end-column="0" />
-          <folding>
-            <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
-            <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
-            <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
-            <element signature="method#add#0;class#ALU#0" expanded="true" />
-            <element signature="method#signedAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatAddition#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatSubtraction#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatMultiplication#0;class#ALU#0" expanded="true" />
-            <element signature="method#floatDivision#0;class#ALU#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Try.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="40" lean-forward="false" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2314">
-          <caret line="89" column="0" lean-forward="true" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding>
-            <element signature="method#main#0;class#test#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4628">
@@ -1178,6 +1004,8 @@
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
@@ -1208,6 +1036,8 @@
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
@@ -1238,6 +1068,8 @@
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
@@ -1268,6 +1100,8 @@
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
@@ -1298,6 +1132,8 @@
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
@@ -1328,6 +1164,8 @@
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
@@ -1351,13 +1189,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="13" column="37" lean-forward="true" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.java" />
     <entry file="file://$PROJECT_DIR$/src/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="14664">
@@ -1365,6 +1197,8 @@
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
@@ -1395,6 +1229,8 @@
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
@@ -1425,6 +1261,8 @@
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />
@@ -1442,7 +1280,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="206" column="0" lean-forward="false" selection-start-line="206" selection-start-column="0" selection-end-line="206" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1462,9 +1299,182 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Tencent Files/930469801/FileRecv/ALUTest.java" />
     <entry file="file://$PROJECT_DIR$/src/ALUTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/ALUTest2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3172">
+          <caret line="322" column="0" lean-forward="false" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
+          <folding>
+            <element signature="method#integerRepresentationTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#floatRepresentationTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#adderTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#integerAdditionTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#integerMultiplicationTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#integerDivisionTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#signedAdditionTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#floatAdditionTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#floatSubtractionTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#floatMultiplicationTest#0;class#ALUTest2#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AdderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-232">
+          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
+          <folding>
+            <element signature="e#1187#1188#0" expanded="false" />
+            <element signature="e#1258#1259#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/App.java" />
+    <entry file="file://$PROJECT_DIR$/src/FloatDivisionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="9" lean-forward="true" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IntegerAdditionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IntegerRepresentationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IntegerSubtractionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IntegerTrueValueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LeftShiftTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/LogRightShiftTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NegationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OneAdderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SignedAdditionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AriRightShiftTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="method#data#0;class#AriRightShiftTest#0" expanded="true" />
+            <element signature="method#AriRightShiftTest#0;class#AriRightShiftTest#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IntegerDivisionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="method#IntegerDivisionTest#0;class#IntegerDivisionTest#0" expanded="false" />
+            <element signature="e#1277#1278#0" expanded="false" />
+            <element signature="e#1355#1356#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClaAdderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FullAdderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/IntegerMultiplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="method#data#0;class#IntegerMultiplicationTest#0" expanded="true" />
+            <element signature="e#1408#1409#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FloatMultiplicationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+          <folding>
+            <element signature="method#data#0;class#FloatMultiplicationTest#0" expanded="true" />
+            <element signature="e#1483#1484#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
+        <state relative-caret-position="249">
           <caret line="117" column="1" lean-forward="false" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
           <folding>
             <element signature="method#main#0;class#test#0" expanded="true" />
@@ -1472,36 +1482,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Try.java">
+    <entry file="file://$PROJECT_DIR$/src/Ieee754Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="10" lean-forward="false" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="13" column="37" lean-forward="false" selection-start-line="13" selection-start-column="37" selection-end-line="13" selection-end-column="37" />
+        <state relative-caret-position="564">
+          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="method#init#0;class#App#0" expanded="false" />
-            <element signature="method#succeeded#0;class#854:1714" expanded="false" />
-            <element signature="method#cancelled#0;class#854:1714" expanded="false" />
-            <element signature="method#failed#0;class#854:1714" expanded="false" />
-            <element signature="method#call#0;class#854:1714" expanded="false" />
-            <element signature="method#start#0;class#App#0" expanded="false" />
-            <element signature="e#2380#2381#0" expanded="false" />
-            <element signature="e#2408#2409#0" expanded="false" />
+            <element signature="method#data#0;class#Ieee754Test#0" expanded="true" />
+            <element signature="e#1107#1108#0" expanded="true" />
+            <element signature="e#1164#1165#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../../Tencent Files/930469801/FileRecv/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="807">
-          <caret line="1022" column="5" lean-forward="false" selection-start-line="1022" selection-start-column="5" selection-end-line="1022" selection-end-column="5" />
+        <state relative-caret-position="-1024">
+          <caret line="197" column="31" lean-forward="false" selection-start-line="197" selection-start-column="31" selection-end-line="197" selection-end-column="31" />
           <folding>
             <element signature="e#114#115#0" expanded="false" />
             <element signature="e#171#172#0" expanded="false" />
@@ -1522,7 +1518,6 @@
             <element signature="method#change2#0;class#ALU#0" expanded="false" />
             <element signature="method#ecalc#0;class#ALU#0" expanded="false" />
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="false" />
-            <element signature="method#floatRepresentation#0;class#ALU#0" expanded="false" />
             <element signature="method#ieee754#0;class#ALU#0" expanded="false" />
             <element signature="method#integerTrueValue#0;class#ALU#0" expanded="false" />
             <element signature="method#iszero#0;class#ALU#0" expanded="false" />
@@ -1538,11 +1533,11 @@
             <element signature="method#integerAddition#0;class#ALU#0" expanded="false" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="false" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="false" />
-            <element signature="docComment;method#integerDivision#0;class#ALU#0" expanded="false" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="false" />
             <element signature="e#18237#18238#0" expanded="false" />
             <element signature="e#18275#18276#0" expanded="false" />
             <element signature="method#comp#0;class#ALU#0" expanded="false" />
+            <element signature="method#signedAddition#0;class#ALU#0" expanded="false" />
             <element signature="method#floatAddition#0;class#ALU#0" expanded="false" />
             <element signature="method#floatSubtraction#0;class#ALU#0" expanded="false" />
             <element signature="method#floatMultiplication#0;class#ALU#0" expanded="false" />
@@ -1551,32 +1546,63 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ALUTest2.java">
+    <entry file="file://$PROJECT_DIR$/src/FloatAdditionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="322" column="0" lean-forward="false" selection-start-line="322" selection-start-column="0" selection-end-line="322" selection-end-column="0" />
+        <state relative-caret-position="182">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FloatSubtractionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
-            <element signature="method#integerRepresentationTest#0;class#ALUTest2#0" expanded="true" />
-            <element signature="method#floatRepresentationTest#0;class#ALUTest2#0" expanded="true" />
-            <element signature="method#adderTest#0;class#ALUTest2#0" expanded="true" />
-            <element signature="method#integerAdditionTest#0;class#ALUTest2#0" expanded="true" />
-            <element signature="method#integerMultiplicationTest#0;class#ALUTest2#0" expanded="true" />
-            <element signature="method#integerDivisionTest#0;class#ALUTest2#0" expanded="true" />
-            <element signature="method#signedAdditionTest#0;class#ALUTest2#0" expanded="true" />
-            <element signature="method#floatAdditionTest#0;class#ALUTest2#0" expanded="true" />
-            <element signature="method#floatSubtractionTest#0;class#ALUTest2#0" expanded="true" />
-            <element signature="method#floatMultiplicationTest#0;class#ALUTest2#0" expanded="true" />
+            <element signature="method#data#0;class#FloatSubtractionTest#0" expanded="true" />
+            <element signature="e#1504#1505#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Try.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FloatTrueValueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-42">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="method#data#0;class#FloatTrueValueTest#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/FloatRepresentationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="method#data#0;class#FloatRepresentationTest#0" expanded="true" />
+            <element signature="e#1347#1348#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ALU.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1880">
-          <caret line="312" column="56" lean-forward="false" selection-start-line="312" selection-start-column="56" selection-end-line="312" selection-end-column="56" />
+        <state relative-caret-position="357">
+          <caret line="165" column="0" lean-forward="true" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
           <folding>
             <element signature="method#integerRepresentation#0;class#ALU#0" expanded="true" />
             <element signature="docComment;method#floatRepresentation#0;class#ALU#0" expanded="false" />
+            <element signature="method#integerTrueValue#0;class#ALU#0" expanded="true" />
+            <element signature="method#floatTrueValue#0;class#ALU#0" expanded="true" />
             <element signature="method#integerSubtraction#0;class#ALU#0" expanded="true" />
             <element signature="method#integerMultiplication#0;class#ALU#0" expanded="true" />
             <element signature="method#integerDivision#0;class#ALU#0" expanded="true" />

@@ -5,18 +5,10 @@ import java.util.ArrayList;
  */
 public class Try {
     public static void main(String[] args){
-        ArrayList<Integer> list=new ArrayList<>();
+        ALU alu = new ALU();
+        System.out.println(alu.floatTrueValue("0000001110010", 4, 8));
+        System.out.println(alu.floatTrueValue("0111111001000", 4, 8));
 
-
-        for (int i=0;i<10;i++){
-            list.add(i);
-        }
-
-        //list.remove(3);
-        //list.set(16,11);
-
-        System.out.println(list.get(3));
-        System.out.println(list.get(4));
 
 
     }

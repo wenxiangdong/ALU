@@ -1,3 +1,5 @@
+import org.omg.CORBA.INTERNAL;
+
 /**
  * 模拟ALU进行整数和浮点数的四则运算
  * @author 李培林 161250060
@@ -74,61 +76,91 @@ public class ALU {
 				char sign=(number.charAt(0)=='-')?'1':'0';
 				System.out.println("after sign");
 				double num = Double.parseDouble(number);
+				System.out.println("num:"+num);
 				if(num==0){
 					System.out.println("is zero");
 					return sign+zero.toString();
 				}
 
 //				String integerPattern=String.valueOf(Math.abs((int)num));
+				System.out.println("min:"+Math.pow(2,-base+1));
+				if(Math.abs(num)>Math.pow(2,-(base))) {//规格化
+					s.append(
+							Integer.toBinaryString(
+									Math.abs((int) num)
+							)
+					);
+					int oldIndexOfDot = s.length();
+					System.out.println("old:" + s.toString());
 
-				s.append(
-						Integer.toBinaryString(
-							Math.abs((int)num)
-						)
-				);
-				int oldIndexOfDot=s.length();
-				System.out.println("old:"+s.toString());
-
-				double doublePattern=Math.abs(num-(int)num);
-				int temp=0;//用于记录每次乘2是否大于1
-				for(int i=0;i<sLength;i++){
-					temp=(doublePattern*2>=1.0)?1:0;
-					doublePattern=doublePattern*2-temp;
-					s.append(temp);
-				}
-				System.out.println("new:"+s.toString());
-
-				//检测数值的第一个1
-				int newIndexOfDot=0;
-				for(;newIndexOfDot<s.length();newIndexOfDot++){
-					if(s.charAt(newIndexOfDot)=='1'){
-						break;
+					double doublePattern = Math.abs(num - (int) num);
+					System.out.println("doublePattern:" + doublePattern);
+					int temp = 0;//用于记录每次乘2是否大于1
+//				for(int i=0;i<sLength;i++){
+//					temp=(doublePattern*2>=1.0)?1:0;
+//					System.out.println("temp:"+temp);
+//					doublePattern=doublePattern*2-temp;
+//					System.out.println("doublePattern:"+doublePattern);
+//					s.append(temp);
+//				}
+					while (doublePattern > 0) {
+						temp = (doublePattern * 2 >= 1.0) ? 1 : 0;
+						System.out.println("temp:" + temp);
+						doublePattern = doublePattern * 2 - temp;
+						System.out.println("doublePattern:" + doublePattern);
+						s.append(temp);
 					}
-				}
+					System.out.println("new:" + s.toString());
 
-				//左右规并计算阶码
-				int delt=oldIndexOfDot-(newIndexOfDot+1);
-				if(newIndexOfDot>sLength) {
-					delt=-base;
-					newIndexOfDot=oldIndexOfDot-1;
-				}
-				System.out.println("delt:"+delt);
-				String e=integerRepresentation(
-						String.valueOf(delt+base),eLength
-				);
-				System.out.println("e"+e);
+					//检测数值的第一个1
+					int newIndexOfDot = 0;
+					for (; newIndexOfDot < s.length(); newIndexOfDot++) {
+						if (s.charAt(newIndexOfDot) == '1') {
+							break;
+						}
+					}
 
-				if(s.length()-1-newIndexOfDot>sLength){
-					System.out.println("to deleted:"+s.substring(sLength+1, s.length()));
-					s.replace(sLength+1,s.length(),"");
+					//左右规并计算阶码
+					int delt = oldIndexOfDot - (newIndexOfDot + 1);
+					if (newIndexOfDot > sLength) {
+						delt = -base;
+						newIndexOfDot = oldIndexOfDot - 1;
+					}
+					System.out.println("delt:" + delt);
+					String e = integerRepresentation(
+							String.valueOf(delt + base), eLength
+					);
+					System.out.println("e：" + e);
+
+					if (s.length() - 1 - newIndexOfDot > sLength) {
+						System.out.println("to deleted:" + s.substring(sLength + 1, s.length()));
+						s.replace(sLength + 1, s.length(), "");
+					} else {
+						System.out.println("too short");
+						for (int i = s.length() - 1 - newIndexOfDot; i < sLength; i++) {
+							s.append("0");
+						}
+					}
+
+					return sign + e + s.substring(newIndexOfDot + 1, newIndexOfDot + 1 + sLength);
 				}else{
-					for(int i=s.length()-1-newIndexOfDot;i<sLength;i++){
-						s.append("0");
+					System.out.println("非规格化");
+					num=Math.abs(num);
+					int temp=0;
+					while(num>0){
+						temp=num*2>=1.0?1:0;
+						num=num*2-temp;
+						s.append(temp);
+						System.out.println(s);
+						System.out.println(num);
 					}
+
+					String e=integerRepresentation("0",eLength);
+					String sString=leftShift(s.toString(),base-1).substring(0,sLength);
+					System.out.println(sString);
+					return sign+e+sString;
+
 				}
-
-				return sign+e+s.substring(newIndexOfDot+1,newIndexOfDot+1+sLength);
-
 
 		}
 
@@ -519,20 +551,23 @@ public class ALU {
 	 */
 	public String integerMultiplication (String operand1, String operand2, int length) {
 		// TODO YOUR CODE HERE.
+
+		operand2 = integerRepresentation(integerTrueValue(operand2),length);
+
 		//初始化
 		StringBuilder resultBuilder=new StringBuilder();
-		for(int i =0;i<length-operand2.length();i++){
+		for(int i =0;i<length;i++){
 			resultBuilder.append("0");//初始P
 		}
 		resultBuilder.append(operand2);
 		String result=resultBuilder.toString();
-//		System.out.println(result);
+		System.out.println(result);
 
 		//被加数
-		int oLen1=operand1.length();
+
 		String adder=leftShift(
-				integerRepresentation(integerTrueValue(operand1),length),
-				length-oLen1
+				integerRepresentation(integerTrueValue(operand1),2*length),
+				length
 		);
 		//System.out.println("x:"+adder);
 		System.out.println("adder:"+adder);
@@ -545,7 +580,7 @@ public class ALU {
 
 		String lastBits=result.substring(result.length()-1)+additionalBit;
 		//开始计算
-		for (int i=0;i<oLen1;i++){
+		for (int i=0;i<length;i++){
 			System.out.println("lastBits:"+lastBits);
 			if (lastBits.equals("01")){
 				//System.out.println("01");
@@ -565,20 +600,19 @@ public class ALU {
 			lastBits = result.substring(result.length()-1)+additionalBit;
 
 		}
-		if(operand1.charAt(0)!=operand2.charAt(0)){
-			if(result.charAt(0)=='0'){
-				return "1"+result;
-			}
-		}else{
-			if(result.charAt(0)=='1'){
-				return "1"+result;
-			}
-		}
 
-		if(Integer.parseInt(integerTrueValue(result))>Math.pow(2,length)-1){
-			return "1"+result;
+		System.out.println("Result:"+result);
+
+		int reultInt=Integer.parseInt(integerTrueValue(result));
+		int max=(int)Math.pow(2,length-1)-1;
+		int min=-(max+1);
+		String of="0";
+		if(reultInt>max||reultInt<min){
+			of="1";
 		}
-		return  "0"+result;
+		return of+result.substring(length);
+
+
 	}
 	
 	/**
@@ -592,6 +626,10 @@ public class ALU {
 	public String integerDivision (String operand1, String operand2, int length) {
 		// TODO YOUR CODE HERE.
 
+
+		if(Integer.parseInt(integerTrueValue(operand2))==0){
+			return "NaN";
+		}
 		//被除数初始化
 		//符号 右移的拓展
 		StringBuilder operand1Builder=new StringBuilder();
@@ -764,6 +802,8 @@ public class ALU {
 	public String floatAddition (String operand1, String operand2, int eLength, int sLength, int gLength) {
 		// TODO YOUR CODE HERE.
 
+
+
 		//符号位
 		String f1=operand1.substring(0,1);
 		String f2=operand2.substring(0,1);
@@ -865,6 +905,10 @@ public class ALU {
 	 */
 	public String floatSubtraction (String operand1, String operand2, int eLength, int sLength, int gLength) {
 //		 TODO YOUR CODE HERE.
+		if(Double.parseDouble(floatTrueValue(operand2,eLength,sLength))==0){
+			return "0"+operand1;
+		}
+
 		if(operand2.charAt(0)=='0'){
 			operand2="1"+operand2.substring(1);
 		}else{
@@ -886,6 +930,17 @@ public class ALU {
 	 */
 	public String floatMultiplication (String operand1, String operand2, int eLength, int sLength) {
 		// TODO YOUR CODE HERE.
+		if(Double.parseDouble(floatTrueValue(operand2,4,4))==0
+				||
+				Double.parseDouble(floatTrueValue(operand1,4,4))==0){
+			StringBuilder zero=new StringBuilder();
+			for(int i=0;i<2+eLength+sLength;i++){
+				zero.append("0");
+			}
+			return zero.toString();
+		}
+
+
 		int base=(int)Math.pow(2,eLength-1)-1;
 		int e1Int=Integer.parseInt(integerTrueValue("0"+operand1.substring(1,1+eLength)));
 		int e2Int=Integer.parseInt(integerTrueValue("0"+operand2.substring(1,1+eLength)));
