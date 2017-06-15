@@ -1035,7 +1035,7 @@ public class ALU {
         if(s1.equals(s2)){
             sResult=integerRepresentation("0",sLength);
         }else {
-             sResult = integerDivision("0" + s1, "0" + s2, sLength+1).substring(1,sLength+1);
+             sResult = integerDivision("0" + s1, "0" + s2, sLength+1).substring(3,sLength+3);
         }
         System.out.println("sResult:"+sResult);
         if (sResult.charAt(0)=='0') {
